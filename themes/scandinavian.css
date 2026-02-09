@@ -1,0 +1,293 @@
+/* scandinavian.css */
+
+:root {
+    --bg-color: #f7f9f9; /* Cool white / mist */
+    --card-bg: #ffffff;
+    --text-color: #2c3e50; /* Dark Slate Blue/Grey */
+    --text-light: #7f8c8d; /* Grey */
+    --accent-color: #5d7e7e; /* Muted Teal/Sage */
+    --accent-light: #dbece9; /* Very light teal */
+    --warm-neutral: #e8e6e1; /* Pebble */
+    
+    --border-radius: 12px;
+    --container-width: 1100px;
+    
+    --font-main: 'Open Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-main);
+    line-height: 1.7; /* Extra breathing room */
+    color: var(--text-color);
+    background-color: var(--bg-color);
+}
+
+/* Typography - Friendly & Clean */
+h1, h2, h3, h4 {
+    font-weight: 600;
+    color: var(--text-color);
+    margin-bottom: 1rem;
+    letter-spacing: -0.01em;
+}
+
+h1 {
+    font-size: 3rem;
+    line-height: 1.2;
+}
+
+h2 {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    position: relative;
+}
+
+/* Small decorative dash typical of Scandi design */
+h2::after {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 4px;
+    background-color: var(--accent-color);
+    margin: 1rem auto 0;
+    border-radius: 2px;
+}
+
+p {
+    margin-bottom: 1.5rem;
+    color: var(--text-light);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.2s;
+}
+
+/* Layout */
+.container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+section {
+    padding: 7rem 0;
+}
+
+/* Header - Floating Card Style or Transparent */
+header {
+    padding: 2rem 0;
+    background-color: transparent; /* Open feeling */
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--text-color);
+    letter-spacing: 0.05em;
+    /* Minimal circular mark */
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo::before {
+    content: '';
+    display: block;
+    width: 12px;
+    height: 12px;
+    background-color: var(--accent-color);
+    border-radius: 50%;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2.5rem;
+    list-style: none;
+}
+
+.nav-links a {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-light);
+}
+
+.nav-links a:hover {
+    color: var(--accent-color);
+}
+
+/* Hero Section */
+.hero {
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+}
+
+.hero-content {
+    max-width: 600px;
+}
+
+.hero h1 {
+    color: var(--text-color);
+}
+
+.hero p {
+    font-size: 1.15rem;
+    color: var(--text-light);
+    margin-bottom: 2.5rem;
+}
+
+/* Soft, Rounded Buttons */
+.cta-button {
+    display: inline-block;
+    background-color: var(--accent-color);
+    color: white;
+    padding: 1rem 2.5rem;
+    font-weight: 600;
+    border-radius: 50px; /* Pill shape */
+    border: none;
+    box-shadow: 0 4px 15px rgba(93, 126, 126, 0.3); /* Soft, colored shadow */
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(93, 126, 126, 0.4);
+}
+
+/* Practice Areas - Soft Cards */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.card {
+    background: var(--card-bg);
+    padding: 2.5rem;
+    border-radius: var(--border-radius);
+    border: 1px solid transparent; /* No visible border usually */
+    /* Extremely subtle shadow for that "floating on cloud" look */
+    box-shadow: 0 10px 40px rgba(0,0,0,0.03); 
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
+}
+
+/* Bio Section - "Hygge" Warmth */
+.bio {
+    background-color: var(--warm-neutral); 
+    border-radius: var(--border-radius);
+    margin: 2rem 2rem; /* Floating container look */
+}
+
+/* Adjust wrapper to fit inside margins */
+.bio .container {
+    padding: 4rem 2rem; 
+}
+
+.bio-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.bio-image {
+    background-color: #d1cfcba1;
+    border-radius: var(--border-radius);
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.bio-text blockquote {
+    font-size: 1.5rem;
+    font-style: normal; /* Scandi often prefers straight text */
+    font-weight: 300;
+    color: var(--text-color);
+    border-left: none;
+    padding: 0;
+    margin: 1.5rem 0;
+}
+
+/* Contact Section */
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 5rem;
+}
+
+.contact-info h4 {
+    margin-top: 2rem;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--accent-color);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 1.25rem;
+    border: none;
+    background-color: white; /* White on grey background */
+    border-radius: var(--border-radius);
+    font-family: inherit;
+    font-size: 1rem;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.02);
+    transition: box-shadow 0.2s;
+}
+
+input:focus, textarea:focus {
+    outline: none;
+    box-shadow: 0 4px 12px rgba(93, 126, 126, 0.15); /* Tinted shadow focus */
+}
+
+/* Footer */
+footer {
+    padding: 4rem 0;
+    text-align: center;
+    color: var(--text-light);
+    font-size: 0.9rem;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .nav-links { display: none; }
+    
+    .bio { margin: 0; border-radius: 0; }
+    
+    .bio-content, .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+}
